@@ -1,0 +1,31 @@
+
+<div id="hero" class="grid mt-8 pb-2 md:px-8 md:pb-8">
+    <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
+        <div class="flex-row w-full flex justify-content-center">
+            <div class="flex ml-3 align-items-center justify-content-center bg-brand-primary align-self-center mb-3"
+                style="width:4.2rem; height:4.2rem; border-radius: 10px;">
+                <i class="pi pi-fw pi-desktop text-5xl text-primary-200"></i>
+            </div>
+        </div>
+        <div class="px-8 text-center">
+            <div class="font-bold text-2xl mb-6">
+                <span class="text-900">O sistema é desenvolvido na </span>
+                <span class="text-primary">medida</span>
+                <span class="text-900"> certa para sua loja de </span>
+                <span class="text-primary">autopeças</span>
+            </div>
+            <div class="grid justify-content-center">
+                <div class="col-6 md:col-6 mb-4 px-5" *ngFor="let card of listaItems">
+                    <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
+                        <i class="{{card.icon}} text-4xl text-primary"></i>
+                    </span>
+                    <div class="text-900  font-medium">{{card.label}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-content-end flex-order-1 sm:flex-order-2 col-12 lg:col-6 bg-brand-primary p-0" style="border-radius:8px;">
+        <!-- <img src="assets/demo/images/landing/mockup-desktop.svg" class="w-11" alt="mockup"> -->
+        <img src="assets/brand/fotos/mockup-2.svg" class="w-30rem sm:w-auto" alt="mockup mobile">
+    </div>
+</div>

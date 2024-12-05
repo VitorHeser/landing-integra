@@ -1,0 +1,54 @@
+#hero {
+    min-height: 100vh;
+    img {
+        height: 25rem;
+    }
+    #block1 {
+        margin-top: 1rem;
+        width: 90%;
+    }
+
+    button {
+        z-index: 9999;
+        background-color: var(--text-primary) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    #hero {
+        min-height: 70vh;
+        img {
+            height: 25rem;
+        }
+    }
+    #block1 {
+        margin-top: 0px !important;
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    #hero {
+        min-height: 50vh;
+        img {
+            height: 25rem;
+        }
+    }
+    #block1 {
+        margin-top: 0px !important;
+        width: 50% !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    #hero {
+        min-height: 40vh;
+        img {
+            height: 25rem;
+        }
+    }
+    #block1 {
+        margin-top: 0px !important;
+        width: 60% !important;
+    }
+}

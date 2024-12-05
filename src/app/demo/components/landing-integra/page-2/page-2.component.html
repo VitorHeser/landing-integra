@@ -1,0 +1,34 @@
+<div id="hero" class="grid mt-8 pb-2  md:px-8 md:pb-8">
+    <div class="flex justify-content-center col-12 lg:col-6 bg-brand-primary-200 p-0 flex-order-1 lg:flex-order-0"
+        style="border-radius:8px;">
+        <img src="assets/brand/fotos/mockup-1.svg" class="w-auto" alt="mockup mobile">
+    </div>
+
+    <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
+        <div class="flex-row w-full flex justify-content-center">
+            <div class="flex align-items-center justify-content-center bg-brand-primary-200 align-self-center mb-3"
+                style="width:4.2rem; height:4.2rem; border-radius: 10px;">
+                <i class="pi pi-fw pi-mobile text-5xl text-primary"></i>
+            </div>
+        </div>
+        <!-- <h2 class="line-height-1 text-900 text-4xl font-normal">Congue Quisque Egestas</h2>
+        <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Sit amet mattis vulputate enim nulla aliquet.</span> -->
+        <div class="px-8 text-center">
+            <div class="font-bold text-2xl mb-6">
+                <span class="text-900">O sistema é intuitivo e apresenta rápida </span>
+                <span class="text-primary">rastreabilidade de operação</span>
+                <span class="text-900">, permitindo que nossos clientes atendam </span>
+                <span class="text-primary">com mais agilidade.</span>
+            </div>
+            <div class="grid justify-content-center">
+                <div class="col-6 md:col-6 mb-4 px-5" *ngFor="let card of listaItems">
+                    <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
+                        <i class="{{card.icon}} text-4xl text-primary"></i>
+                    </span>
+                    <div class="text-900  font-medium">{{card.label}}</div>
+                    <!-- <span class="text-700 text-sm line-height-3">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
