@@ -6,7 +6,7 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 @Component({
   selector: 'page-1',
   templateUrl: './page-1.component.html',
-  styleUrls: ['./page-1.component.scss', './../landing-integra.component.scss'],
+  styleUrls: ['./page-1.component.scss'],
   animations: [
     trigger('fadeIn', [
       transition(':enter', [

@@ -12,6 +12,7 @@ import { Page2Component } from './page-2/page-2.component';
 import { Page3Component } from './page-3/page-3.component';
 import { Page4Component } from './page-4/page-4.component';
 import { Page5Component } from './page-5/page-5.component';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { Page5Component } from './page-5/page-5.component';
         StyleClassModule,
         ChartModule,
         PanelModule,
-        ButtonModule
+        ButtonModule,
+        DialogModule
     ],
     declarations: [
         LandingIntegraComponent,

@@ -15,7 +15,7 @@ export class Page3Component {
     { icon: "pi pi-money-bill", label: "Controle Financeiro" },
     { icon: "pi pi-wallet", label: "Fluxo de Caixa" },
     { icon: "pi pi-cart-plus", label: "Controle de Vendas" },
-    { icon: "pi pi-book", label: "Controle de Estoque" },
+    { icon: "pi pi-box", label: "Controle de Estoque" },
   ];
 
 }
