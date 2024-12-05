@@ -18,7 +18,7 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                 ]
             },
             { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
-            { path: '', loadChildren: () => import('./demo/components/landing-integra/landing-integra.module').then(m => m.LandingIntegraModule) },
+            { path: '', loadChildren: () => import('./landing-integra/landing-integra.module').then(m => m.LandingIntegraModule) },
             { path: 'notfound', component: NotfoundComponent },
             { path: '**', redirectTo: '/notfound' },
         ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' })
