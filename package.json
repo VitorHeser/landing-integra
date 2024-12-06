@@ -1,11 +1,12 @@
 {
-    "name": "sakai-ng",
+    "name": "integra-business",
     "version": "17.0.0",
     "license": "MIT",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
+        "build_ghp": "ng build --output-path docs --base-href /integra-business/",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
