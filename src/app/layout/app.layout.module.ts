@@ -43,7 +43,7 @@ import { DialogModule } from 'primeng/dialog';
         RippleModule,
         RouterModule,
         AppConfigModule,
-        DialogModule
+        DialogModule,
     ],
     exports: [AppLayoutComponent]
 })

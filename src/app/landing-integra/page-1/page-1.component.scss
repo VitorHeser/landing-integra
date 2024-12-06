@@ -52,3 +52,14 @@
         width: 60% !important;
     }
 }
+:host ::ng-deep {
+  button {
+    background-color: var(--text-primary); /* Altere para a cor desejada */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda, se necessário */
+  }
+  
+  button:hover {
+    background-color: #5e00c8; /* Cor ao passar o mouse */
+  }
+}

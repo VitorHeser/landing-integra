@@ -13,6 +13,9 @@ import { Page3Component } from './page-3/page-3.component';
 import { Page4Component } from './page-4/page-4.component';
 import { Page5Component } from './page-5/page-5.component';
 import { DialogModule } from 'primeng/dialog';
+import { Page6Component } from './page-6/page-6.component';
+import { Page7Component } from './page-7/page-7.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
     imports: [
@@ -23,7 +26,8 @@ import { DialogModule } from 'primeng/dialog';
         ChartModule,
         PanelModule,
         ButtonModule,
-        DialogModule
+        DialogModule,
+        InputTextModule
     ],
     declarations: [
         LandingIntegraComponent,
@@ -32,6 +36,8 @@ import { DialogModule } from 'primeng/dialog';
         Page3Component,
         Page4Component,
         Page5Component,
+        Page6Component,
+        Page7Component
     ]
 })
 export class LandingIntegraModule { }

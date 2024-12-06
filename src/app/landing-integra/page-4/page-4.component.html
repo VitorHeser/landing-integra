@@ -1,13 +1,13 @@
-<div id="hero" class="px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
+<div id="hero" class="px-4 lg:px-8 mx-0 lg:mx-8 mt-8">
     <div class="grid justify-content-center">
-        <div class="col-12 text-center mt-8">
+        <div class="col-12 text-center">
             <div class="font-bold text-2xl mb-3">
-                <span class="text-900">Principais recurso do Sistema para </span>
-                <span class="text-primary">Loja de Autopeças</span>
+                <span class="text-900">Principais recursos do </span>
+                <span class="text-primary">Sistema para Loja de Autopeças</span>
             </div>
         </div>
 
-        <div class="col-6 md:col-6 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0 p-1"  *ngFor="let objeto of listaObjetos">
+        <div class="col-6 md:col-6 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-6 lg:mt-0 p-1"  *ngFor="let objeto of listaObjetos">
             <div
                 style="padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2));">
                 <div class="p-3 surface-card h-full text-center " style="border-radius:8px;">
@@ -27,7 +27,7 @@
     </div>
 </div>
 
-<p-dialog [header]="itemSelecionado.title" [(visible)]="pdialogOpen" [style]="{width: '100vw'}">
+<p-dialog [header]="itemSelecionado.title" [(visible)]="pdialogOpen" [style]="{'width': isMd ? '40vw' : '100vw'}">
     <li class="flex align-items-center mb-3" *ngFor="let opcoes of itemSelecionado.topics">
         <i class="pi pi-check-circle text-green-500 mr-2"></i>
         <span class="text-900">{{opcoes.label}}</span>

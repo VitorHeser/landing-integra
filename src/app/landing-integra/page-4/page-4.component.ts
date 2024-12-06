@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
@@ -7,9 +7,28 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
   templateUrl: './page-4.component.html',
   styleUrls: ['./page-4.component.scss', './../landing-integra.component.scss'],
 })
-export class Page4Component {
+export class Page4Component implements OnInit {
 
   constructor(public layoutService: LayoutService, public router: Router) { }
+
+  itemSelecionado: any = {};
+  pdialogOpen: boolean = false;
+  isMd: boolean = false;
+
+  @HostListener('window:resize', [])
+  onResize() {
+    this.isMd = window.innerWidth >= 768;
+    console.log(this.isMd)
+  }
+
+  ngOnInit(): void {
+    this.onResize()
+  }
+
+  selecionarItem(item: any) {
+    this.itemSelecionado = item;
+    this.pdialogOpen = true;
+  }
 
   listaObjetos: any[] = [
     {
@@ -81,11 +100,4 @@ export class Page4Component {
       ]
     }
   ];
-  itemSelecionado: any = {};
-  pdialogOpen: boolean = false;
-
-  selecionarItem(item: any) {
-    this.itemSelecionado = item;
-    this.pdialogOpen = true;
-  }
 }
