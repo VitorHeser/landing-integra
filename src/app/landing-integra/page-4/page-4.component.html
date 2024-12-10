@@ -19,17 +19,13 @@
                     </div>
                     <h5 class="mb-2 text-sm font-bold" style="height: 20px;">{{objeto.title}}</h5>
                 </div>
-                <div class="w-full text-center">
-                    <p-button [text]="true" label="Ver Mais" (onClick)="selecionarItem(objeto)"></p-button>
+                <div class="w-full text-left p-3">
+                    <li class="flex align-items-center mb-3" *ngFor="let opcoes of objeto.topics">
+                        <i class="pi pi-check-circle text-green-500 mr-2"></i>
+                        <span class="text-900">{{opcoes.label}}</span>
+                    </li>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<p-dialog [header]="itemSelecionado.title" [(visible)]="pdialogOpen" [style]="{'width': isMd ? '40vw' : '100vw'}">
-    <li class="flex align-items-center mb-3" *ngFor="let opcoes of itemSelecionado.topics">
-        <i class="pi pi-check-circle text-green-500 mr-2"></i>
-        <span class="text-900">{{opcoes.label}}</span>
-    </li>
-</p-dialog>
