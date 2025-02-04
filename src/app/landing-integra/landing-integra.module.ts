@@ -21,6 +21,8 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { Page7SuccessComponent } from './page-7-success/page-7-success.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { MessagesModule } from 'primeng/messages';
+import { PanelValidationMessagesComponent } from './panel-validation-messages/panel-validation-messages.component';
+import { SplashScreenComponent } from './splash/splash.component';
 
 @NgModule({
     imports: [
@@ -35,6 +37,7 @@ import { MessagesModule } from 'primeng/messages';
         FormsModule,
         InputTextModule,
         MessagesModule,
+        
     ],
     declarations: [
         LandingIntegraComponent,
@@ -47,7 +50,9 @@ import { MessagesModule } from 'primeng/messages';
         Page6Component,
         Page7Component,
         FormularioComponent,
-        Page7SuccessComponent
+        Page7SuccessComponent,
+        PanelValidationMessagesComponent,
+        SplashScreenComponent
     ],
     providers: [    ]
 })

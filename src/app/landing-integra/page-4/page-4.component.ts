@@ -18,7 +18,6 @@ export class Page4Component implements OnInit {
   @HostListener('window:resize', [])
   onResize() {
     this.isMd = window.innerWidth >= 768;
-    console.log(this.isMd)
   }
 
   ngOnInit(): void {

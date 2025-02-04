@@ -66,4 +66,9 @@ export class MessageUtil {
     }
     return null;
   }
+
+  static mapMessageDtoToMessage(i: MessageDTO) {
+    return ({ severity: `${i.type}`.toLowerCase(), summary: i.description });
+  }
+  
 }

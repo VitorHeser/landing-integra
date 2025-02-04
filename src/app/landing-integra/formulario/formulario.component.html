@@ -1,3 +1,8 @@
+<app-panel-validation-messages [messages]="convertedMessages" (callbackOnClose)="this.convertedMessages = []"
+    [displayType]="'inner'" [display]="existConvertedMessages">
+</app-panel-validation-messages>
+<app-splash-screen [isLoading]="isLoading"></app-splash-screen>
+
 <form (ngSubmit)="submitForm()">
   <span class="p-float-label">
     <input pInputText id="fullname" name="fullname" class="p-inputtext-lg" [(ngModel)]="nome" type="text"
@@ -16,11 +21,11 @@
     <input pInputText id="telefone" name="telefone" class="p-inputtext-lg" [(ngModel)]="telefone" type="tel"
       (input)="formatarTelefone()" [style]="{'width':'100%'}" required />
     <label for="telefone" class="block text-lg font-semibold">Digite seu telefone</label>
-    <p *ngIf="!validarTelefone() && email" class="text-red-500 text-sm">E-mail inválido</p>
+    <p *ngIf="!validarTelefone() && telefone" class="text-red-500 text-sm">Telefone inválido</p>
   </span>
 
   <div class="mt-5 mb-6">
-    <p-button label="Quero ter meu acesso agora por 15 dias gratuito!" icon="pi pi-check" rounded size="large"
+    <p-button label="Quero ter meu acesso agora por 15 dias gratuito!" icon="pi pi-check" [style]="{'z-index': 999999}"  [rounded]="true" size="large"
       type="submit">
     </p-button>
   </div>

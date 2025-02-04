@@ -11,4 +11,14 @@ export class LandingIntegraComponent {
 
     constructor(public layoutService: LayoutService, public router: Router) { }
     
+    scrollToElement(): void {
+        const element = document.getElementById("formularioFim");
+        if (element) {
+            setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+            }, 200);
+        } else {
+            console.warn("Elemento #form não encontrado!");
+        }
+    }
 }

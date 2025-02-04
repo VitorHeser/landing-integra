@@ -1,41 +1,53 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Message } from 'primeng/api';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-import { MessageDTO, ValidationUtil } from 'src/assets/validation.util';
+import { MessageUtil } from 'src/assets/message.util';
+import { ValidationUtil } from 'src/assets/validation.util';
 import { environment } from 'src/environments/environment';
 
 
 @Component({
   selector: 'formulario',
   templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.scss', './../landing-integra.component.scss'],
+  styleUrls: ['./formulario.component.scss'],
 })
 export class FormularioComponent {
 
+  isLoading: boolean = false;
   nome: string = '';
   email: string = '';
   telefone: string = '';
-  msgs1: MessageDTO[] = [];
+  convertedMessages: Message[] = [];
 
   constructor(public layoutService: LayoutService, public router: Router, private http: HttpClient) {
 
   }
 
   submitForm() {
-    this.msgs1 = []
     const body: Cliente = {
       nome: this.nome, 
       email: this.email,
       telefone: this.telefone, 
     };
-    ValidationUtil.addMessageRequiredField(body.nome, "Nome", this.msgs1)
-    ValidationUtil.addMessageRequiredField(body.email, "Email", this.msgs1)
-    ValidationUtil.addMessageRequiredField(body.telefone, "Telefone", this.msgs1)
-    ValidationUtil.addMessageInvalidEmail(body.email, "Email", this.msgs1)
-    ValidationUtil.addMessageInvalidPhone(body.telefone, "Telefone", this.msgs1)
-    console.log(this.msgs1)
-    // this.enviarDados(body);
+    var mensagens = this.validarFormulario(body);
+    if(mensagens.length==0) {
+      this.isLoading = true;
+      this.enviarDados(body);
+    }
+  }
+
+  validarFormulario(body: Cliente) {
+    this.convertedMessages = []
+    var mensagens = []
+    ValidationUtil.addMessageRequiredField(body.nome, "Nome", mensagens)
+    ValidationUtil.addMessageRequiredField(body.email, "Email", mensagens)
+    ValidationUtil.addMessageRequiredField(body.telefone, "Telefone", mensagens)
+    ValidationUtil.addMessageInvalidEmail(body.email, "Email", mensagens)
+    ValidationUtil.addMessageInvalidPhone(body.telefone, "Telefone", mensagens)
+    this.convertedMessages = mensagens.map(MessageUtil.mapMessageDtoToMessage);
+    return mensagens;
   }
 
   enviarDados(body: Cliente) {
@@ -51,6 +63,7 @@ export class FormularioComponent {
   }
 
   tratarRetorno(response) {
+    this.isLoading = false;
     var code = response.status;
     if(code==200){
       this.router.navigate(["obrigado"])
@@ -78,6 +91,10 @@ export class FormularioComponent {
   
   validarEmail(): boolean {
     return ValidationUtil.isValidEmail(this.email)
+  }
+
+  get existConvertedMessages() {
+    return this.convertedMessages.length > 0;
   }
 }
 

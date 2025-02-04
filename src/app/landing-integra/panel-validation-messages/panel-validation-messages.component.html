@@ -1,0 +1,11 @@
+<p-dialog header="Atenção" [(visible)]="display" (onHide)="close()" showEffect="fade" [style]="{width: '700px'}">
+  <div style="line-height: 1.5">
+    <div>Verifique as mensagens abaixo:</div>
+    <p-messages [value]="messages"></p-messages>
+  </div>
+  <p-footer>
+      <div class="p-mt-4">
+        <button type="button" pButton icon="pi pi-check" (click)="close()" label="OK, entendi" class="p-button-text"></button>
+      </div>
+  </p-footer>
+</p-dialog>

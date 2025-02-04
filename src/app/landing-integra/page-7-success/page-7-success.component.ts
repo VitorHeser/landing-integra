@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-import { environment } from 'src/environments/environment';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'page-7-success',
@@ -11,12 +10,12 @@ import { environment } from 'src/environments/environment';
 })
 export class Page7SuccessComponent {
 
-  constructor(public layoutService: LayoutService, public router: Router, private http: HttpClient) {
+  constructor(public layoutService: LayoutService, public location: Location, private http: HttpClient) {
 
   }
 
 
   voltar() {
-      this.router.navigate([""])
+      this.location.back()
   }
 }
