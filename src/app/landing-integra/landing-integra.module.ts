@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { FormularioComponent } from './formulario/formulario.component';
 import { Page7SuccessComponent } from './page-7-success/page-7-success.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
         ButtonModule,
         DialogModule,
         FormsModule,
-        InputTextModule
+        InputTextModule,
+        MessagesModule,
     ],
     declarations: [
         LandingIntegraComponent,
@@ -46,6 +48,7 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
         Page7Component,
         FormularioComponent,
         Page7SuccessComponent
-    ]
+    ],
+    providers: [    ]
 })
 export class LandingIntegraModule { }

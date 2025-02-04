@@ -9,12 +9,14 @@
     <input pInputText id="email" name="email" class="p-inputtext-lg" [(ngModel)]="email" type="email"
       [style]="{'width':'100%'}" required />
     <label for="email" class="block text-lg font-semibold">Digite seu melhor email</label>
+    <p *ngIf="!validarEmail() && email" class="text-red-500 text-sm">E-mail inválido</p>
   </span>
-
+  
   <span class="p-float-label mt-5">
     <input pInputText id="telefone" name="telefone" class="p-inputtext-lg" [(ngModel)]="telefone" type="tel"
-      [style]="{'width':'100%'}" required />
+      (input)="formatarTelefone()" [style]="{'width':'100%'}" required />
     <label for="telefone" class="block text-lg font-semibold">Digite seu telefone</label>
+    <p *ngIf="!validarTelefone() && email" class="text-red-500 text-sm">E-mail inválido</p>
   </span>
 
   <div class="mt-5 mb-6">
