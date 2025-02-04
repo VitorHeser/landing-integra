@@ -67,7 +67,14 @@ export class FormularioComponent {
     var code = response.status;
     if(code==200){
       this.router.navigate(["obrigado"])
+    } else {
+      this.mostrarErro();
     }
+  }
+
+  mostrarErro() {
+    var mensagens = [MessageUtil.createErrorMessage("Ocorreu um erro ao salvar", "Ocorreu um erro ao salvar, tente novamente mais tarde.")]
+    this.convertedMessages = mensagens.map(MessageUtil.mapMessageDtoToMessage);
   }
 
   formatarTelefone() {

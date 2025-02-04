@@ -6,6 +6,7 @@ import { Page7SuccessComponent } from './page-7-success/page-7-success.component
 @NgModule({
     imports: [RouterModule.forChild([
         { path: '', component: LandingIntegraComponent },
+        { path: 'landing', component: LandingIntegraComponent },
         { path: 'obrigado', component: Page7SuccessComponent }
     ])],
     exports: [RouterModule]

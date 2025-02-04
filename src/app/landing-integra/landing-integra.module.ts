@@ -37,7 +37,7 @@ import { SplashScreenComponent } from './splash/splash.component';
         FormsModule,
         InputTextModule,
         MessagesModule,
-        
+
     ],
     declarations: [
         LandingIntegraComponent,
@@ -54,6 +54,6 @@ import { SplashScreenComponent } from './splash/splash.component';
         PanelValidationMessagesComponent,
         SplashScreenComponent
     ],
-    providers: [    ]
+    providers: [],
 })
 export class LandingIntegraModule { }

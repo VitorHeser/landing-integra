@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
@@ -10,7 +11,7 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 export class LandingIntegraComponent {
 
     constructor(public layoutService: LayoutService, public router: Router) { }
-    
+
     scrollToElement(): void {
         const element = document.getElementById("formularioFim");
         if (element) {
