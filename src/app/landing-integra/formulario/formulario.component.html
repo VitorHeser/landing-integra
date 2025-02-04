@@ -1,0 +1,25 @@
+<form (ngSubmit)="submitForm()">
+  <span class="p-float-label">
+    <input pInputText id="fullname" name="fullname" class="p-inputtext-lg" [(ngModel)]="nome" type="text"
+      [style]="{'width':'100%'}" required />
+    <label for="fullname" class="block text-lg font-semibold">Insira seu nome aqui</label>
+  </span>
+
+  <span class="p-float-label mt-5">
+    <input pInputText id="email" name="email" class="p-inputtext-lg" [(ngModel)]="email" type="email"
+      [style]="{'width':'100%'}" required />
+    <label for="email" class="block text-lg font-semibold">Digite seu melhor email</label>
+  </span>
+
+  <span class="p-float-label mt-5">
+    <input pInputText id="telefone" name="telefone" class="p-inputtext-lg" [(ngModel)]="telefone" type="tel"
+      [style]="{'width':'100%'}" required />
+    <label for="telefone" class="block text-lg font-semibold">Digite seu telefone</label>
+  </span>
+
+  <div class="mt-5 mb-6">
+    <p-button label="Quero ter meu acesso agora por 15 dias gratuito!" icon="pi pi-check" rounded size="large"
+      type="submit">
+    </p-button>
+  </div>
+</form>
